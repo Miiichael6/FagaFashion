@@ -1,3 +1,4 @@
+import { Product } from "./Product.entity";
 import {
   Column,
   Entity,
@@ -7,7 +8,6 @@ import {
   BaseEntity,
   OneToMany,
 } from "typeorm";
-import { Post } from "./Post.entity";
 
 @Entity()
 export class User extends BaseEntity {
@@ -20,11 +20,11 @@ export class User extends BaseEntity {
   @Column({ type: "text", unique: true, nullable: false })
   lastname: string;
 
-  @OneToMany(() => Post, (post) => post.user)
-  posts?: Post[];
-
   @Column({ default: true })
   active: boolean;
+
+  // @OneToMany(() => Product, (product) => product.seller)
+  // products?: Product[];
 
   @CreateDateColumn()
   createdAt: Date;

@@ -1,0 +1,59 @@
+.NavBarHeader {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 2rem;
+  z-index: 1;
+  background-color: #B22222;
+  // height: 4rem;
+
+  .HamburguerMenuContainer {
+    width: 2.2em;
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 50%;
+    transition: background-color .1s ease;
+
+    .HamburguerMenuIcon {
+      font-size: 1.3rem;
+      color: white;
+      border-radius: 50%;
+      transition: color .1s ease;
+    }
+  }
+
+  .HamburguerMenuContainer:hover {
+    background-color: #fff;
+    cursor: pointer;
+
+    .HamburguerMenuIcon {
+      color: black;
+    }
+  }
+
+  .titleNavBar {
+    font-weight: 600;
+    color: black;
+  }
+
+  .AvatarUser {
+    width: 2rem;
+    border-radius: 50%;
+    height: 2rem;
+  }
+
+}
+
+.TitleHeaderName {
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 2rem;
+  font-style: italic;
+  // color: linear-gradient(to bottom, #000000, #1c1c1c);;
+}

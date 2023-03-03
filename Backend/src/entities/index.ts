@@ -1,2 +1,3 @@
 export { User } from "./User.entity"
-export { Post }from "./Post.entity"
+export {Product} from "./Product.entity"
+export { Category } from "./Category.entity"

@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { User, Post } from "../entities";
+import { User, Product, Category } from "../entities";
 
 // conectando base de datos
 export const AppDataSource = new DataSource({
@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
   password: "ELGRANMICHAELCANALES16$",
   port: 5432,
   database: "typeorm_express",
-  entities: [User, Post],
+  entities: [User, Product, Category],
   // logging: true,
   synchronize: process.env.NODE_ENV === "production" ? false : true,
 });

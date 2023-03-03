@@ -1,18 +1,17 @@
-import express from "express"
+import express, { Response, Request } from "express";
 import morgan from "morgan";
-import cors from "cors"
-import { corsOptions } from './config/corsConfig';
-import router from './routes/index.Routes';
+import cors from "cors";
+import { corsOptions } from "./config/corsConfig";
+import router from "./routes/index.Routes";
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(morgan("dev"))
-app.use(cors(corsOptions))
-
+app.use(express.json());
+app.use(morgan("dev"));
+app.use(cors(corsOptions));
 
 // Uso de la rutas de Express;
-app.use("/api",router)
 
+app.use("/api", router);
 
 export default app;

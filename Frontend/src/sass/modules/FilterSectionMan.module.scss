@@ -1,0 +1,66 @@
+@mixin buttonsFilter() {
+  padding: 0.25rem 1rem;
+  background-color: aliceblue;
+  display: inline-block;
+  color: black;
+  margin: 0 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: scale 0.1s ease;
+}
+
+@mixin ActiveButtons() {
+  background-color: black;
+  color: white;
+  scale: 0.9;
+}
+
+.ManButton {
+  @include buttonsFilter();
+}
+.KidButton {
+  @include buttonsFilter();
+}
+
+.activeManButton {
+  @include ActiveButtons();
+}
+
+.activeKidsButton {
+  @include ActiveButtons();
+}
+
+.filterClothesComponent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.filtersContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-radius: 0.15rem;
+  width: 80%;
+  background-color: #b22222;
+}
+
+.searchBarMen {
+  font-family: sans-serif;
+  padding: 0.5rem;
+  // padding-bottom: 0.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+.selectBarMen {
+  border-radius: 0.25rem;
+}

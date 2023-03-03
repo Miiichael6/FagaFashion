@@ -1,0 +1,25 @@
+.ProductContainer {
+  max-width: 250px;
+  padding: 1rem 1rem;
+  background-color: rgb(145, 11, 102);
+  border-radius: 0.5rem;
+
+  .ProductImage {
+    border-radius: 0.5rem;
+  }
+
+  .ProductName {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .ProductDescription {
+    color: white;
+  }
+
+  .ProducPrice {
+    color: white;
+  }
+}

@@ -1,13 +1,13 @@
-import { UserInterface } from "../interfaces/user.interface";
-import { User, Post } from "../entities";
+import { UserInterface } from "../interfaces";
+import { User } from "../entities";
 import { Response } from "express";
 import { handleError } from "../utils/handleError";
 
 export const createUser = async (body: UserInterface, res: Response) => {
   try {
-    const { firstname, lastname, posts } = body;
+    const { firstname, lastname } = body;
 
-    const user = User.create({ firstname, lastname, posts });
+    const user = User.create({ firstname, lastname });
     await User.save(user);
 
     return res.send(user);
@@ -31,10 +31,7 @@ export const findOneUser = async (id: number, res: Response) => {
     const user = await User.findOne({
       where: {
         id: id,
-      },
-      relations: {
-        posts: true,
-      },
+      }
     });
 
     if (!user) {

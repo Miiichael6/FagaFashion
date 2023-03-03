@@ -1,0 +1,72 @@
+@use "../base/mediaqueries" as *;
+
+@mixin IconsHamburguer($color, $degrees) {
+  display: inline-block;
+  rotate: $degrees;
+  color: $color;
+}
+
+.HamburguerMenu {
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  min-height: 100vh;
+  background-color: rgb(119, 33, 33);
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: 1rem;
+  transform: translateX(-200px);
+  transition: ease 0.3s transform;
+  z-index: 1000;
+  // Cellphones
+  @media (max-width: $movil) {
+    min-width: 100%;
+    transform: translateX(-100vw);
+    // display: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .MenuListHamburguer {
+    padding: 1rem;
+
+    li {
+      margin: 0.25rem 0;
+
+      a {
+        color: rgba(7, 7, 7, 0.696);
+        font-weight: 800;
+        display: inline-block;
+        margin-left: 0.5rem;
+        transition: transform 0.1s ease;
+      }
+
+      a:hover {
+        transform: scale(1.2);
+      }
+
+      span {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        display: inline-block;
+        transform: translateY(5px);
+
+        .main {
+          @include IconsHamburguer(white, 90deg);
+        }
+        .women {
+          @include IconsHamburguer(rgb(198, 36, 131), -45deg);
+        }
+        .men {
+          @include IconsHamburguer(rgb(59, 139, 209), 0deg);
+        }
+      }
+    }
+  }
+}
+
+.open {
+  transform: translateX(0px);
+}

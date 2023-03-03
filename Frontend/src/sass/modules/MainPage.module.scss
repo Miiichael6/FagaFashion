@@ -1,0 +1,45 @@
+@mixin WomenMen() {
+  display: inline-block;
+  transition: transform 0.1s ease;
+  font-weight: bold;
+  margin: 0 .20rem;
+}
+
+.MainPageClotheStore {
+  width: 100%;
+  min-height: 100vh;
+
+  .TitleContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+    .WelcomeTitle {
+      font-size: 2rem;
+      margin: 0.25rem 0;
+      background: linear-gradient(90deg, rgb(49, 106, 197), rgb(43, 162, 43));
+      
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+
+  .welcomeParagraph {
+    text-align: center;
+
+    a {
+      @include WomenMen();
+    }
+
+    a:hover {
+      transform: scale(1.1);
+    }
+
+    .women {
+      color: rgb(139, 27, 123)
+    }
+
+    .men {
+      color: rgb(73, 141, 230);
+    }
+  }
+}
